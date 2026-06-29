@@ -2,7 +2,7 @@
 
 <img src="Smart-Canvas001/assets/images/app_icon.png" alt="Smart Campus AI Logo" width="150"/>
 
-# Smart Campus AI (MNU Smart Canvas)
+# Smart Campus AI (MNU Smart Campus)
 ### An AI-Powered Intelligent University Management System for Menoufia National University (MNU)
 
 </div>
