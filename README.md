@@ -1,5 +1,13 @@
-# 🏫 Smart Campus AI (MNU Smart Canvas)
+<div align="center">
+
+<img src="Smart-Canvas001/assets/images/app_icon.png" alt="Smart Campus AI Logo" width="150"/>
+
+# Smart Campus AI (MNU Smart Canvas)
 ### An AI-Powered Intelligent University Management System for Menoufia National University (MNU)
+
+</div>
+
+---
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
@@ -7,42 +15,77 @@
 [![Python FastAPI](https://img.shields.io/badge/FastAPI-RAG_Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Gemini AI](https://img.shields.io/badge/Gemini-AI_Advisor-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
-Smart Campus AI (MNU Smart Canvas) is a next-generation, integrated university management platform designed to address administrative fragmentation, proxy attendance fraud, and the difficulty of accessing university bylaws. By combining a cross-platform **Flutter** application, a robust **Supabase** cloud backend, and a custom **Python FastAPI RAG (Retrieval-Augmented Generation)** pipeline, the platform delivers a comprehensive digital experience tailored for **Students**, **Professors**, **Admins**, and **Administrators**.
+Smart Campus AI (MNU Smart Canvas) is a next-generation, integrated university management platform designed to address administrative fragmentation, proxy attendance fraud, and the difficulty of accessing university bylaws. By combining a cross-platform **Flutter** application, a robust **Supabase** cloud backend, and a custom **Python FastAPI RAG (Retrieval-Augmented Generation)** pipeline, the platform delivers a comprehensive digital experience tailored for **Students**, **Professors (Doctors)**, **Admins**, and **Administrators**.
 
 ---
 
 ## 📋 Table of Contents
 1. [🌟 System Overview](#-system-overview)
-2. [🏛️ Architecture & Tech Stack](#️-architecture--tech-stack)
+2. [🏛️ Architectural Layer Model & Tech Stack](#️-architectural-layer-model--tech-stack)
 3. [🚀 Key Features](#-key-features)
 4. [👥 Role-Based System (RBAC) & Use Cases](#-role-based-system-rbac--use-cases)
 5. [🔐 Anti-Fraud Attendance Handshake Protocol](#-anti-fraud-attendance-handshake-protocol)
 6. [🤖 AI Chatbots & Hybrid RAG Pipeline](#-ai-chatbots--hybrid-rag-pipeline)
 7. [🗄️ Database Design & ERD](#️-database-design--erd)
-8. [📊 Database Schema (Data Dictionary)](#-database-schema-data-dictionary)
-9. [⚠️ Implementation Challenges & Solutions](#%EF%B8%8F-implementation-challenges--solutions)
-10. [📈 Evaluation & Performance Metrics](#-evaluation--performance-metrics)
-11. [📱 User Interface & Screen Gallery](#-user-interface--screen-gallery)
-12. [⚙️ Installation & Configuration](#%EF%B8%8F-installation--configuration)
-13. [🔮 Future Work](#-future-work)
+8. [📊 Database Schema & Data Dictionary](#-database-schema--data-dictionary)
+9. [🛡️ Security Architecture & Row-Level Security (RLS)](#%EF%B8%8F-security-architecture--row-level-security-rls)
+10. [⚠️ Implementation Challenges & Solutions](#%EF%B8%8F-implementation-challenges--solutions)
+11. [📈 Evaluation & Performance Metrics](#-evaluation--performance-metrics)
+12. [📱 User Interface & Screen Gallery](#-user-interface--screen-gallery)
+13. [⚙️ Installation & Configuration](#%EF%B8%8F-installation--configuration)
+14. [🔮 Future Work](#-future-work)
 
 ---
 
 ## 🌟 System Overview
+
 Smart Campus AI was developed to overcome three primary issues in higher education management:
-1. **Proxy Attendance Fraud**: Eliminates attendance manipulation by utilizing dynamic, time-limited QR codes validated against on-campus network metrics (Wi-Fi SSID) and device fingerprints.
-2. **Access to Regulations**: Replaces search through static, lengthy regulatory PDFs with a bilingual (Arabic/English) hybrid RAG chatbot, providing instant, source-grounded answers.
+1. **Proxy Attendance Fraud**: Traditional attendance tracking (paper logs, static QR codes) is heavily vulnerable to remote scans, photo sharing, and GPS spoofing. This platform implements a secure, multi-sensor verification handshake.
+2. **Access to Regulations**: University bylaws are lengthy, complex documents. Smart Campus AI deploys a custom Arabic-language-focused hybrid RAG model that allows students to query university policies and receive precise, source-grounded responses.
 3. **Administrative Fragmentation**: Unifies schedules, material distribution, assignments, messaging, exams, grading, and campus navigation into a single application.
 
 ---
 
-## 🏛️ Architecture & Tech Stack
+## 🏛️ Architectural Layer Model & Tech Stack
 
 ### System Components
 The platform follows **Clean Architecture** principles across a split mobile-client and backend-microservice layout:
 * **Frontend Mobile Client**: Built with Flutter and Dart, organized in modular feature directories (e.g., auth, student/attendance, chatbot, chat). State management uses the **BLoC / Cubit** pattern with immutable states and unidirectional data flow. Dependency injection is managed via **GetIt**.
 * **Database & BaaS**: Supabase provides PostgreSQL storage, JWT-based **GoTrue** authentication, real-time WebSocket syncing (for attendance and chat), and object storage for course materials. Row-Level Security (RLS) is applied to all database tables.
 * **RAG Backend Service**: A Python FastAPI microservice that extracts, cleans, chunks, embeds, and index regulations. It performs hybrid search and connects to Google Gemini / OpenRouter API to compile source-cited answers.
+
+### Clean Architecture Data Flow
+```mermaid
+graph LR
+    subgraph Presentation Layer
+        UI["UI Widget / View Screen"]
+        Cubit["Cubit / BLoC State Controller"]
+        UI -- Triggers Event / Event Dispatch --> Cubit
+        Cubit -- Yields New Immutable State --> UI
+    end
+
+    subgraph Business Logic Layer
+        RepoInterface["Repository Interface (Abstract)"]
+        Cubit -- Calls Use Cases / Methods --> RepoInterface
+    end
+
+    subgraph Data Layer
+        RepoImpl["Repository Implementation"]
+        RemoteDS["Remote Data Source (Supabase API)"]
+        LocalDS["Local Data Source (Hive Cache)"]
+        
+        RepoInterface --> RepoImpl
+        RepoImpl --> RemoteDS
+        RepoImpl --> LocalDS
+    end
+
+    subgraph Infrastructure
+        SupabaseServer[("Supabase Cloud Backend")]
+        SQLite[("Local Hive Storage")]
+        RemoteDS -- HTTP/WebSocket --> SupabaseServer
+        LocalDS -- Read/Write --> SQLite
+    end
+```
 
 ### High-Level System Architecture
 ```mermaid
@@ -62,7 +105,7 @@ graph TB
     subgraph Backend-as-a-Service (Supabase Cloud)
         Auth[GoTrue Auth / JWT]
         Realtime[WebSockets Realtime Sync]
-        PostgreSQL[(PostgreSQL Relational DB)]
+        PostgreSQL[("PostgreSQL Relational DB")]
         RLS[Row-Level Security Policies]
         Storage[Supabase Object Storage]
         NetClient --> Auth
@@ -74,20 +117,20 @@ graph TB
 
     subgraph Python RAG Backend (FastAPI)
         API[FastAPI Endpoints]
-        Chroma[ChromaDB Vector Store]
-        BM25[BM25 Index]
-        EmbedModel[all-MiniLM-L6-v2]
-        CrossEnc[Cross-Encoder Reranker]
-        LLM[Google Gemini / OpenRouter]
+        Chroma[("ChromaDB Vector Store")]
+        BM25_Idx[("BM25 Sparse Index")]
+        EmbedModel["all-MiniLM-L6-v2 Model"]
+        CrossEnc["Cross-Encoder Reranker"]
+        LLM["Google Gemini / OpenRouter API"]
         
-        API --> BM25
+        API --> BM25_Idx
         API --> Chroma
         Chroma --> EmbedModel
         API --> CrossEnc
         CrossEnc --> LLM
     end
     
-    NetClient -- REST API / Chat Query --> API
+    NetClient -- "REST API / Chat Query" --> API
 ```
 
 ---
@@ -125,31 +168,31 @@ Roles in System
 ### Use Case Diagram
 ```mermaid
 graph LR
-    actor Student as "🎓 Student"
-    actor Doctor as "👨‍🏫 Doctor (Professor)"
-    actor Admin as "💼 Admin"
-    actor SuperAdmin as "👑 Administrator"
+    Student["🎓 Student"]
+    Doctor["👨‍🏫 Doctor (Professor)"]
+    Admin["💼 Admin"]
+    SuperAdmin["👑 Administrator"]
 
     subgraph Student Use Cases
-        U1(View Schedule & GPA)
-        U2(Scan QR Attendance)
-        U3(Query RAG bylaws)
-        U4(Consult Gemini Advisor)
-        U5(Submit Assignments)
+        U1["View Schedule & GPA"]
+        U2["Scan QR Attendance"]
+        U3["Query RAG Bylaws"]
+        U4["Consult Gemini Advisor"]
+        U5["Submit Assignments"]
     end
 
     subgraph Doctor Use Cases
-        U6(Generate Rotating QR)
-        U7(Upload Subject Materials)
-        U8(Monitor Live Attendance)
-        U9(Grade Assignments & Exams)
+        U6["Generate Rotating QR"]
+        U7["Upload Subject Materials"]
+        U8["Monitor Live Attendance"]
+        U9["Grade Assignments & Exams"]
     end
 
     subgraph Administrative Use Cases
-        U10(Global Schedule Configuration)
-        U11(Manage Rooms & Buildings)
-        U12(Full User Accounts CRUD)
-        U13(System Analytics & Notifications)
+        U10["Global Schedule Configuration"]
+        U11["Manage Rooms & Buildings"]
+        U12["Full User Accounts CRUD"]
+        U13["System Analytics & Notifications"]
     end
 
     Student --> U1
@@ -187,7 +230,7 @@ sequenceDiagram
     actor Professor
     participant Supabase
     actor Student
-    participant Sensors as Client Sensors (SSID, GPS, DeviceID)
+    participant Sensors as "Client Sensors (SSID, GPS, DeviceID)"
     
     Professor->>Supabase: Create Attendance Session (SubjectID, GPS Polygon, target Wi-Fi SSID, optional PIN)
     Supabase-->>Professor: Return encrypted token (regenerates every 5 minutes)
@@ -248,8 +291,8 @@ graph TD
         Extract --> Norm[Arabic Text Normalization]
         Norm --> Splitter[Overlapping Splitter: 1000 char, 200 overlap]
         Splitter --> Embed[all-MiniLM-L6-v2 Embedder]
-        Embed --> Chroma[(ChromaDB Vector Store)]
-        Splitter --> BM25_Idx[(BM25 Sparse Index)]
+        Embed --> Chroma[("ChromaDB Vector Store")]
+        Splitter --> BM25_Idx[("BM25 Sparse Index")]
     end
 
     subgraph Inference
@@ -258,7 +301,7 @@ graph TD
         CleanQ --> Sparse[BM25 Sparse Search]
         Chroma --> Dense
         BM25_Idx --> Sparse
-        Dense --> RRF[Reciprocal Rank Fusion RRF, K=30]
+        Dense --> RRF["Reciprocal Rank Fusion RRF (K=30)"]
         Sparse --> RRF
         RRF --> Rerank[Cross-Encoder Reranker]
         Rerank --> Context[Prompt Context Builder]
@@ -470,72 +513,138 @@ erDiagram
 
 ---
 
-## 📊 Database Schema (Data Dictionary)
+## 📊 Database Schema & Data Dictionary
 
-Here is a detailed layout of the core transactional tables:
+Below are detailed structural outlines of the core database tables:
 
 ### 1. `users` Table
-Stores core identities, linked to roles and colleges, including device fingerprint registration.
-| Column Name | Data Type | Key | Nullable | Default | Description |
-|---|---|---|---|---|---|
-| `id` | UUID | PK | No | `uuid_generate_v4()` | Unique user identifier. |
-| `fullName` | VARCHAR | — | No | — | Complete name of the user. |
-| `email` | VARCHAR | Unique | No | — | Unique login credentials email. |
-| `role_id` | UUID | FK | No | — | Points to `roles(id)`. Defines RBAC clearances. |
-| `college_id` | UUID | FK | No | — | Points to `colleges(id)`. Links user to their faculty. |
-| `device_id` | VARCHAR | — | Yes | `NULL` | Hardware fingerprint registered on the first attendance scan. |
-| `avatar_url` | VARCHAR | — | Yes | `NULL` | Link to the user's profile image in storage. |
-| `created_at` | TIMESTAMP | — | No | `NOW()` | Audit timestamp of account creation. |
+Stores user credentials, profile links, roles, and registers device fingerprints on first attendance.
+| Column Name | Data Type | Constraints | Description |
+|---|---|---|---|
+| `id` | UUID | PK, Default: `uuid_generate_v4()` | Unique user identifier. |
+| `fullName` | VARCHAR(255) | Not Null | User's full name. |
+| `email` | VARCHAR(255) | Unique, Not Null | Account authentication email. |
+| `role_id` | UUID | FK `roles(id)`, Not Null | RBAC role indicator. |
+| `college_id` | UUID | FK `colleges(id)`, Not Null | Faculty mapping. |
+| `device_id` | VARCHAR(255) | Nullable | Unique hardware fingerprint registered on first QR scan. |
+| `avatar_url` | VARCHAR(512) | Nullable | Path to profile avatar inside Supabase Storage bucket. |
+| `created_at` | TIMESTAMP | Default: `NOW()` | Account creation timestamp. |
 
 ### 2. `attendance_sessions` Table
-Generated by professors to define a temporary attendance registration window.
-| Column Name | Data Type | Key | Nullable | Default | Description |
-|---|---|---|---|---|---|
-| `id` | UUID | PK | No | `uuid_generate_v4()` | Session identifier. |
-| `subject_id` | UUID | FK | No | — | Points to `subjects(id)` for which attendance is generated. |
-| `professor_id` | UUID | FK | No | — | Points to `users(id)` (role: Doctor) hosting the class. |
-| `qr_token` | VARCHAR | — | No | — | Cryptographic token contained in the QR code. |
-| `pin` | VARCHAR | — | Yes | `NULL` | Optional 4-digit verification code. |
-| `expires_at` | TIMESTAMP | — | No | — | The exact point the current token expires. |
-| `created_at` | TIMESTAMP | — | No | `NOW()` | Timestamp indicating session creation. |
+Generated by professors to host temporary attendance windows.
+| Column Name | Data Type | Constraints | Description |
+|---|---|---|---|
+| `id` | UUID | PK, Default: `uuid_generate_v4()` | Session identifier. |
+| `subject_id` | UUID | FK `subjects(id)`, Not Null | Target lecture course. |
+| `professor_id` | UUID | FK `users(id)`, Not Null | The doctor who started the session. |
+| `qr_token` | VARCHAR(255) | Not Null | Cryptographic token representing the active QR code. |
+| `pin` | VARCHAR(4) | Nullable | Optional manual code shown on the lecture screen. |
+| `expires_at` | TIMESTAMP | Not Null | Session expiry time (5 minutes post-creation). |
+| `created_at` | TIMESTAMP | Default: `NOW()` | Session generation timestamp. |
 
 ### 3. `attendance_records` Table
-Logs student scans containing validation data for double-check processes.
-| Column Name | Data Type | Key | Nullable | Default | Description |
-|---|---|---|---|---|---|
-| `id` | UUID | PK | No | `uuid_generate_v4()` | Record identifier. |
-| `session_id` | UUID | FK | No | — | Points to `attendance_sessions(id)`. |
-| `student_id` | UUID | FK | No | — | Points to `users(id)` (role: Student) registering. |
-| `device_id` | VARCHAR | — | No | — | Device ID used to scan. Used for multi-profile block checks. |
-| `wifi_ssid` | VARCHAR | — | No | — | SSID of the network the student's device was connected to. |
-| `scanned_at` | TIMESTAMP | — | No | `NOW()` | Exact moment the scan payload reached the database. |
+Logs student check-ins containing verification variables.
+| Column Name | Data Type | Constraints | Description |
+|---|---|---|---|
+| `id` | UUID | PK, Default: `uuid_generate_v4()` | Check-in record ID. |
+| `session_id` | UUID | FK `attendance_sessions(id)`, Not Null | The target attendance window. |
+| `student_id` | UUID | FK `users(id)`, Not Null | The registering student. |
+| `device_id` | VARCHAR(255) | Not Null | Device fingerprint captured on scan. |
+| `wifi_ssid` | VARCHAR(255) | Not Null | Wi-Fi network SSID of the scanner's phone. |
+| `scanned_at` | TIMESTAMP | Default: `NOW()` | Exact arrival timestamp. |
 
 ### 4. `chat_messages` Table
-Tracks real-time messages within communication channels.
-| Column Name | Data Type | Key | Nullable | Default | Description |
-|---|---|---|---|---|---|
-| `id` | UUID | PK | No | `uuid_generate_v4()` | Message identifier. |
-| `room_id` | UUID | FK | No | — | Points to `chat_rooms(id)`. |
-| `sender_id` | UUID | — | No | — | Points to `users(id)` who sent the text. |
-| `sender_name`| TEXT | — | No | — | Plain text name cache (for low-latency loads). |
-| `content` | TEXT | — | Yes | `NULL` | Body of the message (if text). |
-| `attachment_url` | VARCHAR | — | Yes | `NULL` | Storage URL for uploaded media or documents. |
-| `attachment_type` | VARCHAR | — | No | `'text'` | Type of attachment: `'image'`, `'pdf'`, `'voice'`, etc. |
-| `attachment_name` | VARCHAR | — | Yes | `NULL` | Filename showing in UI. |
-| `is_edited` | BOOLEAN | — | No | `FALSE` | Toggle tracking message revisions. |
-| `edited_at` | TIMESTAMP | — | Yes | `NULL` | Revision timestamp. |
-| `created_at` | TIMESTAMP | — | No | `NOW()` | Message creation timestamp. |
+Maintains messages sent within communication groups.
+| Column Name | Data Type | Constraints | Description |
+|---|---|---|---|
+| `id` | UUID | PK, Default: `uuid_generate_v4()` | Message ID. |
+| `room_id` | UUID | FK `chat_rooms(id)`, Cascade Delete | Target room. |
+| `sender_id` | UUID | Not Null | Message sender ID. |
+| `sender_name` | TEXT | Not Null | Cache of sender's name (speeds up messaging renders). |
+| `content` | TEXT | Nullable | Plain text message body. |
+| `attachment_url`| VARCHAR(512) | Nullable | File url if attachment exists. |
+| `attachment_type`| VARCHAR(50) | Default: `'text'` | Asset type: `'image'`, `'pdf'`, `'voice'`, etc. |
+| `attachment_name`| VARCHAR(255) | Nullable | Plaintext file title. |
+| `is_edited` | BOOLEAN | Default: `FALSE` | Tracks if the message was altered. |
+| `edited_at` | TIMESTAMP | Nullable | Revision timestamp. |
+| `created_at` | TIMESTAMP | Default: `NOW()` | Sending timestamp. |
+
+---
+
+## 🛡️ Security Architecture & Row-Level Security (RLS)
+
+PostgreSQL **Row-Level Security (RLS)** is enabled on all tables in Supabase to enforce data access logic directly at the database engine level. Below are core SQL configurations applied to secure tables.
+
+### 1. Enforcing Profile Access Limits
+Users can only modify their own profile data, while administrative roles can query the table for management.
+```sql
+-- Enable RLS on users table
+ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
+
+-- Select Policy: All authenticated users can query profiles in their college
+CREATE POLICY "Allow college profile read" ON public.users
+    FOR SELECT TO authenticated
+    USING (college_id = (SELECT college_id FROM public.users WHERE id = auth.uid()));
+
+-- Update Policy: Users can only update their own records
+CREATE POLICY "Allow personal update" ON public.users
+    FOR UPDATE TO authenticated
+    USING (auth.uid() = id)
+    WITH CHECK (auth.uid() = id);
+```
+
+### 2. Enforcing Exam Management and RLS
+Only professors (Doctors) linked to a course subject can create, update, or delete exam sheets.
+```sql
+-- Enable RLS on exams
+ALTER TABLE public.exams ENABLE ROW LEVEL SECURITY;
+
+-- Select Policy: Students and Doctors in the course can view exams
+CREATE POLICY "Allow course members select exams" ON public.exams
+    FOR SELECT TO authenticated
+    USING (
+        EXISTS (
+            SELECT 1 FROM public.subjects 
+            WHERE id = exams.subject_id 
+            AND (professor_id = auth.uid() OR college_id = (SELECT college_id FROM public.users WHERE id = auth.uid()))
+        )
+    );
+
+-- Insert/Update Policy: Only the subject professor can write exams
+CREATE POLICY "Allow subject professor manage exams" ON public.exams
+    FOR ALL TO authenticated
+    USING (auth.uid() = professor_id)
+    WITH CHECK (auth.uid() = professor_id);
+```
+
+### 3. Enforcing Chat Room Messaging Safety
+A user can only select/insert messages into a chat room if they belong to the room's access circle.
+```sql
+ALTER TABLE public.chat_messages ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow group members select messages" ON public.chat_messages
+    FOR SELECT TO authenticated
+    USING (
+        EXISTS (
+            SELECT 1 FROM public.chat_rooms r
+            WHERE r.id = room_id
+            -- Verify if room matches college group or private channel involving the user
+            AND (r.type = 'college_group' AND r.target_id::uuid = (SELECT college_id FROM public.users WHERE id = auth.uid()))
+            OR (r.type = 'private_admin_prof' AND (r.target_id = auth.uid()::text OR (SELECT role_id FROM public.users WHERE id = auth.uid()) = (SELECT id FROM public.roles WHERE name = 'Administrator')))
+        )
+    );
+```
 
 ---
 
 ## ⚠️ Implementation Challenges & Solutions
 
-| Challenge | Impact | Technical Solution Adopted |
+| Challenge | Real-World Impact | Technical Solution Adopted |
 |---|---|---|
-| **Proxy Attendance & QR Sharing** | Absent students scan screenshots from home. | Rotating QR codes regenerating every 5 minutes. Old tokens expire instantly in the database. |
-| **Multi-Profile Device Sharing** | A student scans for multiple absent classmates using one phone. | Device fingerprint (UUID) registered on the student's first scan. If a phone tries to scan for multiple student accounts on the same day, the database blocks it via PostgreSQL constraint triggers. |
-| **Location Verification Bypassing** | Students use mock location software. | GPS coordinate check is cross-validated with local Wi-Fi SSID mapping. If a user's device isn't connected to the official university Wi-Fi, the scan is rejected. |
-| **Arabic Text Ingestion in RAG** | Arabic morphological structures and diacritics degrade cosine similarity. | Developed a custom preprocessing pipeline that normalizes diacritics (harakat), normalizes character prefixes/suffixes, and handles RTL text lines properly before tokenization. |
+| **Proxy Attendance & QR Sharing** | Absent students scan screenshots shared on WhatsApp. | Dynamic QR codes utilizing cryptographic time-locked tokens that expire in the database after **5 minutes**. |
+| **Multi-Profile Device Sharing** | One student inside the hall scans for multiple classmates using their phone. | Unique device hardware fingerprints (`device_info_plus`) are bound to user profiles on first check-in. The backend prevents a single `device_id` from registering multiple student IDs for the same subject session on the same day. |
+| **Location Verification Bypassing** | Students use mock location GPS apps to fake classroom presence. | Dual-sensor cross-validation: coordinates collected from GPS (`geolocator`) must fall within the college polygon, AND the active router network SSID (`network_info_plus`) must match the university Wi-Fi network whitelist. |
+| **Arabic Text Ingestion in RAG** | Arabic diacritics, character shapes (Alef/Yeh variants), and layout structures reduce dense vector search accuracy. | Designed a preprocessing pipeline in Python that normalizes Arabic diacritics (harakat), normalizes character prefixes/suffixes, and handles RTL text lines properly before tokenization. |
 | **Real-Time Data Sync Lag** | Attendance and chat updates require fast, low-latency display. | Enforced PostgreSQL replica identity updates and established `Supabase Realtime` WebSocket channels to push updates within 150ms. |
 | **AI Latency & Experience** | LLM API requests took 4+ seconds, causing UI freezes. | Leveraged asynchronous Cubit state yields, rendering a loading indicator immediately and implementing stream chunks for the text response when available. |
 
@@ -570,7 +679,7 @@ Tested across various common attendance proxy cheating attempts:
 
 The application includes an Adaptive Dark/Light Mode system and full localization support for English and Arabic. The UI leverages `flutter_animate` for smooth transitions and `google_fonts` (Outfit and Inter) for premium, high-readability typography.
 
-To view the live screens in this documentation, place your screenshot files inside a `./screenshots/` directory in the project root:
+Below are details of the screens. Place your screenshot files inside a `./screenshots/` directory in the project root:
 
 | Screen Name | Path (Commit Target) | Feature Highlights |
 |---|---|---|
@@ -689,10 +798,41 @@ flutter build ios --release
 
 ---
 
+## 👨‍💻 Development Team
+
+**Graduation Project 2026**  
+*Faculty of Computers and Artificial Intelligence, Menoufia National University (MNU)*
+
+### Team Members
+* **Mohammed Majid Mekhemer**
+* **Mustafa Ayman Eldesoqy**
+* **Rahma Hany Gaber**
+* **Shahd Mostafa Khalil**
+* **Nada Hany Mohamed**
+
+### Supervisor
+* **Dr. Heba Emara**
+
+---
+
+## ❤️ Acknowledgment
+We sincerely thank our supervisor, faculty members, and everyone who contributed to this project. Their guidance and continuous support played a significant role in the successful completion of Smart Campus AI.
+
+---
+
+## 📄 License
+This repository is intended for academic purposes.  
+Copyright © 2026  
+*Faculty of Computers and Artificial Intelligence, Menoufia National University (MNU)*
+
+---
+
 <div align="center">
 
-Built with ❤️ by the **Smart Campus AI Graduation Team**  
-*Faculty of Computers and Artificial Intelligence, Menoufia National University (MNU)*  
-**Bachelor of Computers and Artificial Intelligence (2026)**
+# ⭐ Smart Campus AI
+### Transforming Higher Education with Artificial Intelligence
+
+Made with ❤️ by the Smart Campus AI Team  
+**2026**
 
 </div>
