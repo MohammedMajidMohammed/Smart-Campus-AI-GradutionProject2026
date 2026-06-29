@@ -1,0 +1,2 @@
+537: rerank_method: str = "cosine",
+2476: session.rerank_method = val

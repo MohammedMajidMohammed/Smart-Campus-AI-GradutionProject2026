@@ -1,0 +1,185 @@
+{
+  "description": "Ground Truth for 30-question RAG evaluation. Each entry has 'id', 'question', 'expected_keywords' (must ALL appear in a correct answer for EM=1), and 'reference_answer' (for token-F1 calculation).",
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "ما هي مواد السنة الأولى في كلية الهندسة؟",
+      "expected_keywords": ["رياضيات", "فيزياء", "هندسة", "ساعة", "مقرر"],
+      "reference_answer": "مواد السنة الأولى في كلية الهندسة تشمل مقررات الرياضيات والفيزياء والكيمياء والرسم الهندسي والميكانيكا وعدد من المقررات الأساسية بإجمالي ساعات معتمدة تحددها لائحة الكلية."
+    },
+    {
+      "id": "Q02",
+      "question": "ما هي لائحة كلية الصيدلة؟",
+      "expected_keywords": ["صيدلة", "ساعة", "معتمدة", "تخرج", "كلية"],
+      "reference_answer": "لائحة كلية الصيدلة تحدد المقررات الدراسية والساعات المعتمدة المطلوبة للتخرج وشروط القبول والنجاح والتدريب العملي في مجال الصيدلة."
+    },
+    {
+      "id": "Q03",
+      "question": "ما هي لائحة كلية العلاج الطبيعي؟",
+      "expected_keywords": ["علاج طبيعي", "ساعة", "تخرج", "تدريب", "كلية"],
+      "reference_answer": "لائحة كلية العلاج الطبيعي تحدد المقررات الدراسية والساعات المعتمدة للتخرج وشروط النجاح والتدريب السريري الميداني في مجال العلاج الطبيعي."
+    },
+    {
+      "id": "Q04",
+      "question": "ما هي لائحة كلية الحاسبات؟",
+      "expected_keywords": ["حاسب", "ساعة", "معتمدة", "برمجة", "كلية"],
+      "reference_answer": "لائحة كلية الحاسبات والذكاء الاصطناعي تحدد المقررات في البرمجة وقواعد البيانات والشبكات والذكاء الاصطناعي والساعات المعتمدة المطلوبة للتخرج."
+    },
+    {
+      "id": "Q05",
+      "question": "ما هي لائحة كلية الطب البشري؟",
+      "expected_keywords": ["طب", "ساعة", "تخرج", "سريري", "كلية"],
+      "reference_answer": "لائحة كلية الطب البشري تتضمن المقررات النظرية والعملية والتدريب السريري وعدد سنوات الدراسة والساعات المعتمدة وشروط التخرج."
+    },
+    {
+      "id": "Q06",
+      "question": "ما شروط التخرج في طب الأسنان؟",
+      "expected_keywords": ["أسنان", "ساعة", "تخرج", "مقرر", "نجاح"],
+      "reference_answer": "شروط التخرج في طب الأسنان تشمل اجتياز جميع المقررات بنجاح وإتمام الساعات المعتمدة المطلوبة والتدريب السريري اللازم."
+    },
+    {
+      "id": "Q07",
+      "question": "ما هي لائحة برنامج اللغة الإنجليزية والترجمة؟",
+      "expected_keywords": ["إنجليزي", "ترجمة", "ساعة", "مقرر", "تخرج"],
+      "reference_answer": "لائحة برنامج اللغة الإنجليزية والترجمة تحدد مقررات اللغة والأدب والترجمة التخصصية والساعات المعتمدة اللازمة للتخرج."
+    },
+    {
+      "id": "Q08",
+      "question": "ما هي لائحة كلية الطب البيطري؟",
+      "expected_keywords": ["بيطري", "ساعة", "تخرج", "مقرر", "كلية"],
+      "reference_answer": "لائحة كلية الطب البيطري تتضمن المقررات الدراسية في علم الحيوان والأمراض البيطرية والساعات المعتمدة المطلوبة للتخرج والتدريب الميداني."
+    },
+    {
+      "id": "Q09",
+      "question": "ما هي شروط القبول في الجامعة؟",
+      "expected_keywords": ["قبول", "شروط", "درجة", "ثانوية", "معدل"],
+      "reference_answer": "شروط القبول في الجامعة تشمل الحصول على شهادة الثانوية العامة أو ما يعادلها بدرجة لا تقل عن الحد الأدنى المطلوب لكل كلية والتقدم في المواعيد المحددة."
+    },
+    {
+      "id": "Q10",
+      "question": "كم عدد الساعات المعتمدة المطلوبة للتخرج؟",
+      "expected_keywords": ["ساعة", "معتمدة", "تخرج", "إجمالي"],
+      "reference_answer": "عدد الساعات المعتمدة المطلوبة للتخرج يختلف حسب البرنامج وتتراوح عادة بين 130 و 160 ساعة معتمدة."
+    },
+    {
+      "id": "Q11",
+      "question": "ما هي شروط النجاح في المادة؟",
+      "expected_keywords": ["نجاح", "درجة", "60", "حضور", "امتحان"],
+      "reference_answer": "شروط النجاح في المادة تشمل الحصول على 60% على الأقل من الدرجة الكلية للمقرر مع استيفاء نسبة الحضور المطلوبة."
+    },
+    {
+      "id": "Q12",
+      "question": "ما هي نسبة الحضور المطلوبة؟",
+      "expected_keywords": ["حضور", "75", "نسبة", "غياب", "محاضرة"],
+      "reference_answer": "نسبة الحضور المطلوبة هي 75% على الأقل من إجمالي المحاضرات والتطبيقات العملية وإلا يحرم الطالب من دخول الامتحان."
+    },
+    {
+      "id": "Q13",
+      "question": "كيف يمكنني التقدم لامتحان تعويضي؟",
+      "expected_keywords": ["تعويضي", "امتحان", "عذر", "طلب", "غياب"],
+      "reference_answer": "للتقدم لامتحان تعويضي يجب تقديم طلب رسمي بعذر مقبول خلال المدة المحددة مع تقديم المستندات اللازمة لإثبات العذر."
+    },
+    {
+      "id": "Q14",
+      "question": "ما هي متطلبات التخرج من كلية العلاج الطبيعي؟",
+      "expected_keywords": ["علاج طبيعي", "تخرج", "ساعة", "تدريب", "مقرر"],
+      "reference_answer": "متطلبات التخرج من كلية العلاج الطبيعي تشمل إتمام الساعات المعتمدة المطلوبة واجتياز التدريب السريري والمقررات الإلزامية."
+    },
+    {
+      "id": "Q15",
+      "question": "ما هي المواد الإجبارية في برنامج التمريض؟",
+      "expected_keywords": ["تمريض", "مقرر", "إجباري", "ساعة", "برنامج"],
+      "reference_answer": "المواد الإجبارية في برنامج التمريض تشمل أسس التمريض والتمريض الطبي والجراحي وتمريض الأمومة والطفولة والصحة النفسية والتدريب السريري."
+    },
+    {
+      "id": "Q16",
+      "question": "ما هي إجراءات الانسحاب من المادة؟",
+      "expected_keywords": ["انسحاب", "مادة", "طلب", "موعد", "مقرر"],
+      "reference_answer": "إجراءات الانسحاب من المادة تتضمن تقديم طلب رسمي في المواعيد المحددة والحصول على موافقة الجهة المختصة دون أن يؤثر ذلك على المعدل التراكمي."
+    },
+    {
+      "id": "Q17",
+      "question": "كم عدد ساعات التدريب العملي المطلوبة في التمريض؟",
+      "expected_keywords": ["تمريض", "تدريب", "ساعة", "عملي", "سريري"],
+      "reference_answer": "عدد ساعات التدريب العملي المطلوبة في التمريض تحددها لائحة الكلية وتشمل التدريب السريري في المستشفيات والمراكز الصحية."
+    },
+    {
+      "id": "Q18",
+      "question": "ما هي متطلبات التخرج من كلية التمريض؟",
+      "expected_keywords": ["تمريض", "تخرج", "ساعة", "معتمدة", "مقرر"],
+      "reference_answer": "متطلبات التخرج من كلية التمريض تشمل إتمام الساعات المعتمدة المطلوبة واجتياز جميع المقررات الإلزامية والتدريب السريري."
+    },
+    {
+      "id": "Q19",
+      "question": "ما هي جميع الخطوات المطلوبة للتسجيل في الفصل الدراسي الجديد؟",
+      "expected_keywords": ["تسجيل", "فصل", "خطوات", "رسوم", "مقرر"],
+      "reference_answer": "خطوات التسجيل في الفصل الدراسي تشمل دفع الرسوم الدراسية واختيار المقررات والموافقة عليها من المرشد الأكاديمي والتسجيل في النظام الإلكتروني."
+    },
+    {
+      "id": "Q20",
+      "question": "ما الفرق بين متطلبات التمريض والعلاج الطبيعي؟",
+      "expected_keywords": ["تمريض", "علاج طبيعي", "فرق", "ساعة", "تخرج"],
+      "reference_answer": "تختلف متطلبات التمريض عن العلاج الطبيعي في المقررات المتخصصة وساعات التدريب السريري وعدد الساعات المعتمدة الإجمالية المطلوبة للتخرج."
+    },
+    {
+      "id": "Q21",
+      "question": "What are the admission requirements?",
+      "expected_keywords": ["admission", "requirements", "certificate", "grade", "minimum"],
+      "reference_answer": "Admission requirements include a high school certificate or equivalent with a minimum grade, submission of required documents, and application during the designated enrollment period."
+    },
+    {
+      "id": "Q22",
+      "question": "How many credit hours are required for graduation?",
+      "expected_keywords": ["credit hours", "graduation", "required", "total"],
+      "reference_answer": "The number of credit hours required for graduation varies by program and typically ranges between 130 and 160 credit hours depending on the faculty."
+    },
+    {
+      "id": "Q23",
+      "question": "What are the passing requirements for a course?",
+      "expected_keywords": ["passing", "grade", "60", "attendance", "exam"],
+      "reference_answer": "Passing requirements include achieving at least 60% of the total course grade and meeting the minimum attendance requirement."
+    },
+    {
+      "id": "Q24",
+      "question": "What is the required attendance percentage?",
+      "expected_keywords": ["attendance", "75", "percent", "lectures", "absence"],
+      "reference_answer": "The required attendance percentage is at least 75% of total lectures and practical sessions. Falling below this may result in denial of the final exam."
+    },
+    {
+      "id": "Q25",
+      "question": "How can I apply for a make-up exam?",
+      "expected_keywords": ["make-up", "exam", "request", "excuse", "absence"],
+      "reference_answer": "To apply for a make-up exam, a student must submit a formal request with an acceptable excuse and supporting documents within the specified time period."
+    },
+    {
+      "id": "Q26",
+      "question": "What are the graduation requirements for Physical Therapy?",
+      "expected_keywords": ["physical therapy", "graduation", "credit hours", "training", "courses"],
+      "reference_answer": "Graduation requirements for Physical Therapy include completing the required credit hours, passing all mandatory courses, and completing the required clinical training."
+    },
+    {
+      "id": "Q27",
+      "question": "What are the mandatory courses in the Nursing program?",
+      "expected_keywords": ["nursing", "mandatory", "courses", "credit", "clinical"],
+      "reference_answer": "Mandatory courses in the Nursing program include Fundamentals of Nursing, Medical-Surgical Nursing, Maternal and Child Nursing, Mental Health Nursing, and clinical training."
+    },
+    {
+      "id": "Q28",
+      "question": "What are the withdrawal procedures from a course?",
+      "expected_keywords": ["withdrawal", "course", "request", "deadline", "GPA"],
+      "reference_answer": "Course withdrawal procedures require submitting a formal request before the deadline, obtaining approval, and ensuring it does not negatively affect academic standing."
+    },
+    {
+      "id": "Q29",
+      "question": "What is the complete process for applying to graduate?",
+      "expected_keywords": ["graduate", "application", "process", "requirements", "hours"],
+      "reference_answer": "The graduation application process includes completing all required credit hours, settling financial obligations, submitting a graduation application, and obtaining academic clearance."
+    },
+    {
+      "id": "Q30",
+      "question": "What are the differences between Nursing and Physical Therapy requirements?",
+      "expected_keywords": ["nursing", "physical therapy", "differences", "credit hours", "graduation"],
+      "reference_answer": "Nursing and Physical Therapy differ in their specialized curriculum, required clinical training hours, total credit hours required, and specific practicum requirements."
+    }
+  ]
+}

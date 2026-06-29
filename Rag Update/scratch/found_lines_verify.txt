@@ -1,0 +1,4 @@
+720: def verify_answer(question: str, context: str, answer: str) -> dict:
+3782: fallback_verdict = verify_answer(
+3848: answer_verdict = verify_answer(
+3888: fallback_verdict = verify_answer(

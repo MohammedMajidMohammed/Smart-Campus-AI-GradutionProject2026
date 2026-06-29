@@ -1,0 +1,9 @@
+123: from routes.retrieval.hybrid_search import hybrid_search, normalize_query
+1508: 3. Get RAG explanation chunks (program-isolated via hybrid_search)
+1512: The RAG part passes the detected program to hybrid_search so the
+1513: program isolation layer in hybrid_search filters out other faculties.
+1525: # ── Step 2: RAG part — pass detected program intent to hybrid_search ─
+1526: # hybrid_search will apply _apply_program_isolation for this program.
+1657: # Build _qi_override from _ei — always pass it so hybrid_search
+1669: _dbg(f"DEBUG CLI: Calling hybrid_search with target_top_k={target_top_k} candidates_k={candidates_k}\n")
+1670: retrieval = hybrid_search(

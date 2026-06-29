@@ -1,0 +1,179 @@
+Query: اي هي أقسام كلية اسنان
+Intent: departments, Program: dentistry
+Total results: 20
+
+[1] Page: 25, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: mixed
+    RRF Score: 0.0338, Boosted Score: 0.6838
+    Boost Applied: 0.0000
+    Snippet: ناعية المتحركه Technology of Prosthodontics DTFP تقنية االستعاضة السنية المثبته Technology of Fixed
+Prosthodontics 201 MGP البااولوجيا العامه201 Gener...
+--------------------------------------------------
+[2] Page: 25, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: mixed
+    RRF Score: 0.0231, Boosted Score: 0.6731
+    Boost Applied: 0.0000
+    Snippet: الفصل الدراس الواحد
+درجة عيل كل ساعة معتمدة ف توزيع
+المقررات الدراسية علي المستويات المختلفه
+Menoufia National University Students Care جامعة المنوفية...
+--------------------------------------------------
+[3] Page: 10, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: mixed
+    RRF Score: 0.0332, Boosted Score: 0.6632
+    Boost Applied: 0.1000
+    Snippet: 6. التفكير النقدي واالبداع واالحير افيه ف العمل
+Menoufia National University Students Care جامعة المنوفية االهلية
+رعاية الطالب: المعايير االكاديمية لل...
+--------------------------------------------------
+[4] Page: 10, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0330, Boosted Score: 0.6630
+    Boost Applied: 0.1000
+    Snippet: لسنان (Removable Prosthodontics) االستعاضه الصناعيه المثبته لالسنان (Fixed Prosthodontics) خواص مواد طب االسنان (Dental Biomaterials)
+Menoufia Nationa...
+--------------------------------------------------
+[5] Page: 16, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0233, Boosted Score: 0.6033
+    Boost Applied: 0.0500
+    Snippet: تشمل: مقررات
+اختيارية للمرحلة ما قبل االكلينيكية مقررات اختيارية للمرحلة ما بعد االكلينيكية
+- اللغة االنجلير ية والمصطلحات الطبية
+-ريادة االعمال
+- ادا...
+--------------------------------------------------
+[6] Page: 12, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0076, Boosted Score: 0.5876
+    Boost Applied: 0.0500
+    Snippet: الفصل الثات (الربيع): (يبدا من االسبوع الثات من شهر فير اير ولمدة15. اسبوع شامال االمتحانات الفص ل الثال ث (الص يف): وه و فص ل اختي اري مكث ف (يب دا م...
+--------------------------------------------------
+[7] Page: 25, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: mixed
+    RRF Score: 0.0378, Boosted Score: 0.5678
+    Boost Applied: 0.0000
+    Snippet: لسنان402 Orthodontics 402 DD التشخيص402 Diagnosis 402 Elect مقرر اختياري402 Elective Coarse 402 /المجموعTotal *مقرر اختياري402
+Menoufia National Unive...
+--------------------------------------------------
+[8] Page: 25, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: mixed
+    RRF Score: 0.0339, Boosted Score: 0.5639
+    Boost Applied: 0.0000
+    Snippet: ب ( الفصل الدراس السادس302: ) الكود
+Code اسم المقرر
+Code title الساعات
+النظرية
+Lecture الساعات
+العملية
+Practical الساعات
+المعتمده
+Credit الدرجة
+الكلية...
+--------------------------------------------------
+[9] Page: 21, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0071, Boosted Score: 0.3871
+    Boost Applied: 0.1000
+    Snippet: 67.5 to < 70
+C جيد
+65 to < 67.5
+-C جيد
+60 < 65 D
+مقبول F راسب
+I غير مكتمل
+W منسحب
+FW اري
+منسحب ارص
+Menoufia National University Students Care جامعة ال...
+--------------------------------------------------
+[10] Page: 25, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0367, Boosted Score: 0.3667
+    Boost Applied: 0.0500
+    Snippet: الحرف االول يرمز ايل نوعية المقرر بحيث يكون: G General
+)( مقرر عام
+M Medical )(مقرر ط ر
+D Dental )(مقرر طب اسنان ترمز الحروف التالية ايل اختصار اسم ال...
+--------------------------------------------------
+[11] Page: 35, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0347, Boosted Score: 0.3647
+    Boost Applied: 0.0500
+    Snippet: 7. . يقوم رييس شيون الطالب باخطار الطالب كتابيا من خالل نموذج رسم (نموذج رقم7
+) (وملحق بااللية
+صورة منه ) بيتيجة فحص التظلم خالل عشر ة
+ايام عيلي االكت...
+--------------------------------------------------
+[12] Page: 40, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0342, Boosted Score: 0.3642
+    Boost Applied: 0.0500
+    Snippet: 1. ي االمتحانات والواجبات
+الغش واالنتحال فز او الشروع في اي منهما
+اي اعمال تودي الي اتالف
+للمنشات,
+االجهزة,
+المواد, او الكتب الجامعية او تبديدها...
+--------------------------------------------------
+[13] Page: 42, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0278, Boosted Score: 0.3578
+    Boost Applied: 0.0500
+    Snippet: الخدمات الطالبية: - ملعب كرة القدم
+- ملعب التيس
+- غرف الدراسة...
+--------------------------------------------------
+[14] Page: 41, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0270, Boosted Score: 0.3570
+    Boost Applied: 0.0500
+    Snippet: 2. تيبيه شفاهة او كتابة
+االنذار...
+--------------------------------------------------
+[15] Page: 39, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0250, Boosted Score: 0.3550
+    Boost Applied: 0.0500
+    Snippet: الحق ف:
+يحق للطالب الحصول عيل تعليم جيد يتناسب مع المستوي االكاديمي
+للجامعة, وتوفت بيية تعليمية مناسبة. المعلومات...
+--------------------------------------------------
+[16] Page: 10, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0244, Boosted Score: 0.3544
+    Boost Applied: 0.0500
+    Snippet: 1. المهنية واالتقان والجودة ف العمل العمل كفريق لتحقيق روية. ورسالة واهداف الكليه والجامعة...
+--------------------------------------------------
+[17] Page: 39, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0238, Boosted Score: 0.3538
+    Boost Applied: 0.0500
+    Snippet: حقوق الطالب االكاديمية والشخصية: التعليم الجيد...
+--------------------------------------------------
+[18] Page: 4, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0213, Boosted Score: 0.3513
+    Boost Applied: 0.0500
+    Snippet: االرشاد الوظيف:
+يقدم لك النصايح واالرشادات الالزمة لتخطيط مستقبلك المهنز ي....
+--------------------------------------------------
+[19] Page: 3, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0204, Boosted Score: 0.3504
+    Boost Applied: 0.0500
+    Snippet: خريطة الحرم الجامع:
+ي الحرم الجاميعي
+خريطة توضح مواقع المبابزي الهامة فز...
+--------------------------------------------------
+[20] Page: 39, File: لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf
+    Program: dentistry, Lang: arabic
+    RRF Score: 0.0204, Boosted Score: 0.3504
+    Boost Applied: 0.0500
+    Snippet: الحق ف:
+يحق للطالب ان يعامل
+معاملة عادلة دون تميت ز عيل اي اساس. الحماية
+الحق ف: بحماية الجامعة من اي شكل من اشكال التميت ز او المضايقة
+ز
+يحق للطالب ا...
+--------------------------------------------------

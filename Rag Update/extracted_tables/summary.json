@@ -1,0 +1,16 @@
+[
+  {
+    "page": 9,
+    "table_index": 1,
+    "csv": "extracted_tables\\page_09_table_01.csv",
+    "json": "extracted_tables\\page_09_table_01.json",
+    "rows": 5
+  },
+  {
+    "page": 12,
+    "table_index": 1,
+    "csv": "extracted_tables\\page_12_table_01.csv",
+    "json": "extracted_tables\\page_12_table_01.json",
+    "rows": 4
+  }
+]

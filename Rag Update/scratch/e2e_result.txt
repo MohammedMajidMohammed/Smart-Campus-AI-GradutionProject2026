@@ -1,0 +1,4 @@
+﻿Testing model: openai/gpt-oss-120b:free
+
+Γ£à SUCCESS
+Answer: ╪º┘ä╪¡╪» ╪º┘ä╪ú╪»┘å┘ë ┘ä┘ä┘å╪¼╪º╪¡ ┘ç┘ê **60 ┘à┘å 100**.

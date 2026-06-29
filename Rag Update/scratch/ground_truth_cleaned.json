@@ -1,0 +1,96 @@
+{
+  "description": "Cleaned Ground Truth containing only the 15 questions that actually have answers in the current PDF files.",
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "ما هي مواد السنة الأولى في كلية الهندسة؟",
+      "expected_keywords": ["mecanotronic", "physics", "statistics", "surveying", "parametric", "urban"],
+      "reference_answer": "مواد المستوى الأول (السنة الأولى) لكلية الهندسة تشمل: Architectural and Parametric Design, Urban Planning History & Theory, Engineering Surveying, Technical Report Writing, Applied Statistics, Engineering Physics بالإضافة إلى مواد اختيارية مثل Vibrations and Waves, Modern Physics, Intro to ML & AI, Urban Sustainability, Remote Sensing & GIS, AI, Construction Materials, Structural Analysis, Engineering Mathematics وغيرها."
+    },
+    {
+      "id": "Q02",
+      "question": "ما هي لائحة كلية الصيدلة؟",
+      "expected_keywords": ["pharm", "خمس", "سنوات", "امتياز", "ساعة", "معتمدة"],
+      "reference_answer": "تمنح كلية الصيدلة بكالوريوس الصيدلة (Pharm D - صيدلة إكلينيكية). مدة الدراسة 5 سنوات دراسية (10 فصول) بالإضافة إلى سنة تدريب متقدم (امتياز) تشمل 100 ساعة تدريب ميداني فعلي في الصيدليات الحكومية والخاصة والمستشفيات."
+    },
+    {
+      "id": "Q03",
+      "question": "ما هي لائحة كلية العلاج الطبيعي؟",
+      "expected_keywords": ["علاج طبيعي", "عظام", "باطنة", "نساء", "سمنة", "اختيارية", "12"],
+      "reference_answer": "تشمل المقررات الأساسية لعلاج طبيعي: Orthopedics and its Surgery, Musculoskeletal Physical Therapy I & II, Internal Medicine, Obstetric & Gynecology Physical Therapy, Obesity Management, Radiology, Dermatology, Clinical Reasoning, Biostatistics, Community Medicine ومقررات اختيارية بحد أقصى 12 ساعة معتمدة."
+    },
+    {
+      "id": "Q06",
+      "question": "ما شروط التخرج في طب الأسنان؟",
+      "expected_notes": "خمس سنوات وسنة امتياز ومعدل لا يقل عن 2.00",
+      "expected_keywords": ["2.00", "خمس", "سنوات", "امتياز", "12", "شهرا"],
+      "reference_answer": "شروط التخرج في طب وجراحة الفم والأسنان: إكمال جميع المقررات المعتمدة بنجاح، ومعدل تراكمي عام لا يقل عن 2.00 (معدل C)، ومدة دراسة 5 سنوات (10 فصول أساسية)، يعقبها قضاء سنة تدريب عملي (امتياز) لمدة 12 شهرًا."
+    },
+    {
+      "id": "Q07",
+      "question": "ما هي لائحة برنامج اللغة الإنجليزية والترجمة؟",
+      "expected_keywords": ["120", "ساعة", "إلزامية", "21", "اختيارية", "التحويل"],
+      "reference_answer": "يتطلب التخرج من برنامج الترجمة التخصصية إكمال 120 ساعة إلزامية (منها 11 ساعة متطلب جامعي) و 21 ساعة اختيارية (الإجمالي 141 ساعة معتمدة). يسمح بالتحويل للبرنامج في أي فرقة عدا الفرقة الرابعة."
+    },
+    {
+      "id": "Q08",
+      "question": "ما هي لائحة كلية الطب البيطري؟",
+      "expected_keywords": ["198", "ساعة", "إلبارية", "اختيارية", "نجاح", "رسوب"],
+      "reference_answer": "لائحة برنامج الطب البيطري تتضمن مقررات إجبارية ومقررات اختيارية. المقررات الاختيارية تقيم بنظام نجاح ورسوب فقط ولا تدخل في المعدل التراكمي أو السنوي ولا تحتسب ضمن ساعات التخرج الإجمالية."
+    },
+    {
+      "id": "Q10",
+      "question": "كم عدد الساعات المعتمدة المطلوبة للتخرج؟",
+      "expected_keywords": ["198", "ساعة", "معتمدة", "بيطري"],
+      "reference_answer": "إجمالي الساعات المطلوبة للتخرج لبرنامج الطب البيطري هو 198 ساعة معتمدة (تشمل 186 ساعة إلزامية و 6 ساعات اختيارية عامة و 6 ساعات اختيارية إكلينيكية) بمعدل تراكمي لا يقل عن 2.00."
+    },
+    {
+      "id": "Q14",
+      "question": "ما هي متطلبات التخرج من كلية العلاج الطبيعي؟",
+      "expected_keywords": ["206", "ساعة", "1.00", "امتياز", "12", "شهر"],
+      "reference_answer": "متطلبات التخرج من كلية العلاج الطبيعي: إتمام 206 ساعة دراسية معتمدة بنجاح، وتحقيق معدل تراكمي لا يقل عن 1.00 في جميع المقررات المشتركة، وقضاء سنة تدريب إلزامية (امتياز) لمدة 12 شهراً ميلادياً."
+    },
+    {
+      "id": "Q16",
+      "question": "ما هي إجراءات الانسحاب من المادة؟",
+      "expected_keywords": ["انسحاب", "سجل", "gpa", "w", "fw", "fa"],
+      "reference_answer": "الانسحاب قبل 30% من مدة المقرر أو قبل أعمال السنة يسجل بتقدير W (انسحاب) ولا يؤثر على المعدل التراكمي. بينما الغياب أو الانسحاب المتأخر يسجل FW أو FA ويؤثر على السجل الأكاديمي والعبء الدراسي."
+    },
+    {
+      "id": "Q19",
+      "question": "ما هي جميع الخطوات المطلوبة للتسجيل في الفصل الدراسي الجديد؟",
+      "expected_keywords": ["مواعيد", "المرشد", "الأكاديمي", "الرسوم", "12", "ساعة"],
+      "reference_answer": "خطوات التسجيل: متابعة مواعيد التسجيل المعلنة، استشارة المرشد الأكاديمي والموافقة، استيفاء المتطلبات المسبقة للمواد، الالتزام بالحدود المسموحة (الحد الأدنى 12 ساعة للفصل الرئيسي)، وتأكيد التسجيل النهائي بعد سداد رسوم الخدمة التعليمية."
+    },
+    {
+      "id": "Q22",
+      "question": "How many credit hours are required for graduation?",
+      "expected_keywords": ["198", "credit hours", "veterinary", "graduation"],
+      "reference_answer": "For graduation in Veterinary Medicine, a student must complete 198 credit hours (186 mandatory, 6 elective general, and 6 elective clinical) with a cumulative GPA of at least 2.00."
+    },
+    {
+      "id": "Q23",
+      "question": "What are the passing requirements for a course?",
+      "expected_keywords": ["passing", "60", "percent", "grade", "course"],
+      "reference_answer": "According to the university regulations, a student is considered passing in a course if they achieve a minimum of 60% of the total grade of the course."
+    },
+    {
+      "id": "Q26",
+      "question": "What are the graduation requirements for Physical Therapy?",
+      "expected_keywords": ["physical therapy", "206", "credit", "hours", "gpa", "1.00", "internship", "12", "months"],
+      "reference_answer": "Graduation requirements for Physical Therapy include successfully completing 206 credit hours, maintaining a cumulative GPA of at least 1.00, and spending a compulsory 12-month internship/clinical training."
+    },
+    {
+      "id": "Q28",
+      "question": "What are the withdrawal procedures from a course?",
+      "expected_keywords": ["withdrawal", "w", "fw", "gpa", "academic"],
+      "reference_answer": "Withdrawal from a course before 30% of its duration or midterms results in a 'W' grade which does not affect the cumulative GPA. Later withdrawals or unexcused absences result in 'FW' or 'FA' grades affecting academic standing."
+    },
+    {
+      "id": "Q29",
+      "question": "What is the complete process for applying to graduate?",
+      "expected_keywords": ["graduate", "application", "requirements", "clearance", "internship"],
+      "reference_answer": "The process includes completing all required credit hours of the program, settling all financial dues, completing the required internship period (if applicable), and submitting a graduation request for academic clearance."
+    }
+  ]
+}

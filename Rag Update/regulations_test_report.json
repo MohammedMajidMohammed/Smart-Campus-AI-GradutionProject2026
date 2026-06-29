@@ -1,0 +1,161 @@
+[
+  {
+    "faculty": "الهندسة (Engineering)",
+    "query": "ما هي مواد السنة الأولى في كلية الهندسة؟",
+    "detected_program": "engineering",
+    "expected_program": "engineering",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه_حاسوب.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه_حاسوب.pdf",
+      "هندسه_ميكاترونيكس.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf",
+      "هندسه.pdf"
+    ]
+  },
+  {
+    "faculty": "الصيدلة (Pharmacy)",
+    "query": "ما هي لائحة كلية الصيدلة؟",
+    "detected_program": "pharmacy",
+    "expected_program": "pharmacy",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "دليل صيدلة.pdf",
+      "دليل صيدلة.pdf",
+      "دليل صيدلة.pdf",
+      "دليل صيدلة.pdf",
+      "دليل صيدلة.pdf"
+    ]
+  },
+  {
+    "faculty": "العلاج الطبيعي (Physical Therapy)",
+    "query": "ما هي لائحة كلية العلاج الطبيعي؟",
+    "detected_program": "physical therapy",
+    "expected_program": "physical therapy",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "دليل_الطالب_نهائي_علاج_طبيعي_2025_2026.pdf",
+      "دليل_الطالب_نهائي_علاج_طبيعي_2025_2026.pdf",
+      "دليل_الطالب_نهائي_علاج_طبيعي_2025_2026.pdf",
+      "دليل_الطالب_نهائي_علاج_طبيعي_2025_2026.pdf",
+      "دليل_الطالب_نهائي_علاج_طبيعي_2025_2026.pdf"
+    ]
+  },
+  {
+    "faculty": "الحاسبات والذكاء الاصطناعي (Computer Science)",
+    "query": "ما هي لائحة كلية الحاسبات؟",
+    "detected_program": "computer science",
+    "expected_program": "computer science",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "دليل_برامج_كلية_الحاسوب_والذكاء_الاصطناعى_جامعة_المنوفية_الاهلية.pdf",
+      "دليل_برامج_كلية_الحاسوب_والذكاء_الاصطناعى_جامعة_المنوفية_الاهلية.pdf",
+      "دليل_برامج_كلية_الحاسوب_والذكاء_الاصطناعى_جامعة_المنوفية_الاهلية.pdf",
+      "دليل_برامج_كلية_الحاسوب_والذكاء_الاصطناعى_جامعة_المنوفية_الاهلية.pdf",
+      "دليل_برامج_كلية_الحاسوب_والذكاء_الاصطناعى_جامعة_المنوفية_الاهلية.pdf"
+    ]
+  },
+  {
+    "faculty": "الطب البشري (Medicine)",
+    "query": "ما هي لائحة كلية الطب البشري؟",
+    "detected_program": "medicine",
+    "expected_program": "medicine",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "طب وجراحه.pdf",
+      "طب وجراحه.pdf",
+      "طب وجراحه.pdf",
+      "طب وجراحه.pdf",
+      "طب وجراحه.pdf"
+    ]
+  },
+  {
+    "faculty": "طب الأسنان (Dentistry)",
+    "query": "ما شروط التخرج في طب الأسنان؟",
+    "detected_program": "dentistry",
+    "expected_program": "dentistry",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf",
+      "لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf",
+      "لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf",
+      "لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf",
+      "لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf"
+    ]
+  },
+  {
+    "faculty": "الألسن واللغات (Arts/Translation)",
+    "query": "ما هي لائحة برنامج اللغة الإنجليزية والترجمة؟",
+    "detected_program": "arts",
+    "expected_program": "arts",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "لائحه برنامج اللغة الإنجليزية و الترجمة التخصصية.pdf",
+      "لائحه برنامج اللغة الإنجليزية و الترجمة التخصصية.pdf",
+      "لائحه برنامج اللغة الإنجليزية و الترجمة التخصصية.pdf",
+      "لائحه برنامج اللغة الإنجليزية و الترجمة التخصصية.pdf",
+      "لائحه برنامج اللغة الإنجليزية و الترجمة التخصصية.pdf"
+    ]
+  },
+  {
+    "faculty": "الطب البيطري (Veterinary)",
+    "query": "ما هي لائحة كلية الطب البيطري؟",
+    "detected_program": "veterinary",
+    "expected_program": "veterinary",
+    "program_match": true,
+    "answer_length": 196,
+    "answer_valid": true,
+    "citation_ok": true,
+    "status": "PASSED",
+    "sources": [
+      "لائحة طب بيطري ساعات معتمدة1-1 (1).pdf",
+      "لائحة طب بيطري ساعات معتمدة1-1 (1).pdf",
+      "لائحة طب بيطري ساعات معتمدة1-1 (1).pdf",
+      "لائحة طب بيطري ساعات معتمدة1-1 (1).pdf",
+      "لائحة طب بيطري ساعات معتمدة1-1 (1).pdf"
+    ]
+  }
+]

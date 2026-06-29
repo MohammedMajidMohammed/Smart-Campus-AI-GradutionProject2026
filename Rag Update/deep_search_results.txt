@@ -1,0 +1,6 @@
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\test_questions.json
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\processed_pdfs\طب وجراحه.pdf.json
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\processed_pdfs\لائحه الفم والاسنان جامعة المنوفية الأهليه A-1.pdf.json
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\processed_pdfs\هندسه.pdf.json
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\processed_pdfs\هندسه_حاسوب.pdf.json
+c:\Users\Right Click\Downloads\Telegram Desktop\Rag Update\Rag Update\processed_pdfs\هندسه_ميكاترونيكس.pdf.json

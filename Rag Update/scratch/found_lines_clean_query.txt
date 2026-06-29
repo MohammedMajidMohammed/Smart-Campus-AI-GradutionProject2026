@@ -1,0 +1,8 @@
+22: - clean_query : rewritten semantic search query (English, normalised)
+35: clean_query='first year computer science semester 1 subjects courses',
+84: clean_query:      str                    # rewritten for semantic search
+599: def _build_clean_query(
+638: clean_query: str,
+974: clean_query = _build_clean_query(program, year, semester, intent, raw_query)
+976: program, year, semester, intent, clean_query, raw_query
+982: clean_query      = clean_query,

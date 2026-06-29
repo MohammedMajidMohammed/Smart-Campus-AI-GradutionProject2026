@@ -1,0 +1,3 @@
+174: class _LocalHuggingFaceEmbeddings:
+194: embeddings = _LocalHuggingFaceEmbeddings()
+197: embeddings = None

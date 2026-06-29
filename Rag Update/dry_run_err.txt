@@ -1,0 +1,2 @@
+usage: reprocess_single_pdf.py [-h] [--dry-run] pdf
+reprocess_single_pdf.py: error: the following arguments are required: pdf

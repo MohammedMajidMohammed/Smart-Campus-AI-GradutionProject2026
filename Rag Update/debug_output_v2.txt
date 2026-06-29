@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3630.73it/s]
+DEBUG CLI: Intent=subjects list Program=arts
+DEBUG CLI: Calling hybrid_search with target_top_k=20 candidates_k=200
+DEBUG HYBRID ARGS: top_k=20 dense_cand=200 sparse_cand=200 use_rrf=True lang=None
+DEBUG HYBRID: Starting search for '\u0645\u0642\u0631\u0631\u0627\u062a \u062f\u0631\u0627\u0633\u0629 \u0627\u0644\u0644\u063a\u0647 \u0627\u0644\u0627\u0646\u062c\u0644\u064a\u0632\u064a\u0647 \u0648\u0627\u0644\u062a\u0631\u062c\u0645\u0647...'
+DEBUG WHERE: {'program': {'$eq': 'arts'}}
+DEBUG DENSE FILTER: {'program': {'$eq': 'arts'}}
+DEBUG DENSE FILTER: {'program': {'$eq': 'arts'}}
+DEBUG DENSE FILTER: {'program': {'$eq': 'arts'}}

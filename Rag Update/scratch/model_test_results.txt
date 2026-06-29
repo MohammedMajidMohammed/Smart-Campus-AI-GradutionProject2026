@@ -1,0 +1,31 @@
+﻿=== Testing Models for Arabic (UTF-8 output fixed) ===
+
+Testing: openai/gpt-oss-120b:free
+  SUCCESS: ╪º┘ä╪░┘â╪º╪í ╪º┘ä╪º╪╡╪╖┘å╪º╪╣┘è ┘ç┘ê ┘à╪¼╪º┘ä ┘à┘å ╪╣┘ä┘ê┘à ╪º┘ä╪¡╪º╪│┘ê╪¿ ┘è┘ç╪»┘ü ╪Ñ┘ä┘ë ╪Ñ┘å╪┤╪º╪í ╪ú┘å╪╕┘à╪⌐ ┘ê╪¿╪▒┘à╪¼┘è╪º╪¬ ╪¬┘à┘â┘å ╪º┘ä╪ó┘ä╪º╪¬ ┘à┘å ┘à╪¡╪º┘â╪º╪⌐ ╪º┘ä┘é╪»╪▒╪º╪¬ ╪º┘ä╪░┘ç┘å┘è╪⌐ ╪º┘ä╪¿╪┤╪▒┘è╪⌐ ┘à╪½┘ä ╪º┘ä╪¬╪╣┘ä┘à ┘ê╪º┘ä╪º╪│╪¬┘å╪¬╪º╪¼ ┘ê╪¡┘ä ╪º┘ä┘à╪┤┘â┘ä╪º╪¬.
+
+Testing: google/gemma-4-31b-it:free
+  SUCCESS: ╪º┘ä╪░┘â╪º╪í ╪º┘ä╪º╪╡╪╖┘å╪º╪╣┘è ┘ç┘ê ┘ü╪▒╪╣ ┘à┘å ╪╣┘ä┘ê┘à ╪º┘ä╪¡╪º╪│┘ê╪¿ ┘è┘ç╪»┘ü ╪Ñ┘ä┘ë ╪¿┘å╪º╪í ╪ú┘å╪╕┘à╪⌐ ┘ê╪¿╪▒╪º┘à╪¼ ┘é╪º╪»╪▒╪⌐ ╪╣┘ä┘ë ┘à╪¡╪º┘â╪º╪⌐ ╪º┘ä┘é╪»╪▒╪º╪¬ ╪º┘ä╪░┘ç┘å┘è╪⌐ ╪º┘ä╪¿╪┤╪▒┘è╪⌐ ┘ä╪ú╪»╪º╪í ┘à┘ç╪º┘à ┘à╪╣┘é╪»╪⌐ ┘à╪½┘ä ╪º┘ä╪¬╪╣┘ä┘à ┘ê╪º┘ä╪º╪│╪¬┘å╪¬╪º╪¼ ┘ê╪º╪¬╪«╪º╪░ ╪º┘ä┘é╪▒╪º╪▒╪º╪¬.
+
+Testing: nvidia/nemotron-3-super-120b-a12b:free
+  SUCCESS: ╪º┘ä╪░┘â╪º╪í ╪º┘ä╪º╪╡╪╖┘å╪º╪╣┘è ┘ç┘ê ┘ü╪▒╪╣ ┘à┘å ┘ü╪▒┘ê╪╣ ╪╣┘ä┘ê┘à ╪º┘ä╪¡╪º╪│┘ê╪¿ ┘è┘ç╪»┘ü ╪Ñ┘ä┘ë ╪¿┘å╪º╪í ╪ú┘å╪╕┘à╪⌐ ┘é╪º╪»╪▒╪⌐ ╪╣┘ä┘ë ╪ú╪»╪º╪í ┘à┘ç╪º┘à ╪¬╪¬╪╖┘ä╪¿ ╪░┘â╪º╪í┘ï ╪¿╪┤╪▒┘è┘ï╪º╪î
+
+Testing: meta-llama/llama-3.3-70b-instruct:free
+  RATE-LIMITED (429): model exists but busy
+
+Testing: deepseek/deepseek-v4-flash:free
+  RATE-LIMITED (429): model exists but busy
+
+Testing: qwen/qwen3-next-80b-a3b-instruct:free
+  RATE-LIMITED (429): model exists but busy
+
+Testing: qwen/qwen3-coder:free
+  RATE-LIMITED (429): model exists but busy
+
+Testing: z-ai/glm-4.5-air:free
+  ERROR: 'NoneType' object is not subscriptable
+
+
+=== SUMMARY ===
+Working:      ['openai/gpt-oss-120b:free', 'google/gemma-4-31b-it:free', 'nvidia/nemotron-3-super-120b-a12b:free']
+Rate-limited: ['meta-llama/llama-3.3-70b-instruct:free', 'deepseek/deepseek-v4-flash:free', 'qwen/qwen3-next-80b-a3b-instruct:free', 'qwen/qwen3-coder:free']
+Failed/404:   ['z-ai/glm-4.5-air:free']
