@@ -57,19 +57,19 @@ The platform follows **Clean Architecture** principles across a split mobile-cli
 ### Clean Architecture Data Flow
 ```mermaid
 graph LR
-    subgraph Presentation Layer
+    subgraph "Presentation Layer"
         UI["UI Widget / View Screen"]
         Cubit["Cubit / BLoC State Controller"]
         UI -- Triggers Event / Event Dispatch --> Cubit
         Cubit -- Yields New Immutable State --> UI
     end
 
-    subgraph Business Logic Layer
+    subgraph "Business Logic Layer"
         RepoInterface["Repository Interface (Abstract)"]
         Cubit -- Calls Use Cases / Methods --> RepoInterface
     end
 
-    subgraph Data Layer
+    subgraph "Data Layer"
         RepoImpl["Repository Implementation"]
         RemoteDS["Remote Data Source (Supabase API)"]
         LocalDS["Local Data Source (Hive Cache)"]
@@ -79,7 +79,7 @@ graph LR
         RepoImpl --> LocalDS
     end
 
-    subgraph Infrastructure
+    subgraph "Infrastructure"
         SupabaseServer[("Supabase Cloud Backend")]
         SQLite[("Local Hive Storage")]
         RemoteDS -- HTTP/WebSocket --> SupabaseServer
@@ -90,7 +90,7 @@ graph LR
 ### High-Level System Architecture
 ```mermaid
 graph TB
-    subgraph Frontend Mobile (Flutter & Dart)
+    subgraph "Frontend Mobile (Flutter & Dart)"
         UI[User Interface Screens]
         Bloc[BLoC / Cubit State Logic]
         DI[GetIt Dependency Injection]
@@ -102,7 +102,7 @@ graph TB
         Bloc --> Sensors
     end
 
-    subgraph Backend-as-a-Service (Supabase Cloud)
+    subgraph "Backend-as-a-Service (Supabase Cloud)"
         Auth[GoTrue Auth / JWT]
         Realtime[WebSockets Realtime Sync]
         PostgreSQL[("PostgreSQL Relational DB")]
@@ -115,7 +115,7 @@ graph TB
         PostgreSQL --> RLS
     end
 
-    subgraph Python RAG Backend (FastAPI)
+    subgraph "Python RAG Backend (FastAPI)"
         API[FastAPI Endpoints]
         Chroma[("ChromaDB Vector Store")]
         BM25_Idx[("BM25 Sparse Index")]
@@ -173,7 +173,7 @@ graph LR
     Admin["💼 Admin"]
     SuperAdmin["👑 Administrator"]
 
-    subgraph Student Use Cases
+    subgraph "Student Use Cases"
         U1["View Schedule & GPA"]
         U2["Scan QR Attendance"]
         U3["Query RAG Bylaws"]
@@ -181,14 +181,14 @@ graph LR
         U5["Submit Assignments"]
     end
 
-    subgraph Doctor Use Cases
+    subgraph "Doctor Use Cases"
         U6["Generate Rotating QR"]
         U7["Upload Subject Materials"]
         U8["Monitor Live Attendance"]
         U9["Grade Assignments & Exams"]
     end
 
-    subgraph Administrative Use Cases
+    subgraph "Administrative Use Cases"
         U10["Global Schedule Configuration"]
         U11["Manage Rooms & Buildings"]
         U12["Full User Accounts CRUD"]
@@ -286,7 +286,7 @@ The RAG Regulations Chatbot uses a dual-engine (dense + sparse) pipeline to ensu
 
 ```mermaid
 graph TD
-    subgraph Ingestion
+    subgraph "Ingestion"
         PDF[Bylaw PDFs] --> Extract[PyMuPDF Text Extractor]
         Extract --> Norm[Arabic Text Normalization]
         Norm --> Splitter[Overlapping Splitter: 1000 char, 200 overlap]
@@ -295,7 +295,7 @@ graph TD
         Splitter --> BM25_Idx[("BM25 Sparse Index")]
     end
 
-    subgraph Inference
+    subgraph "Inference"
         Q[User Query] --> CleanQ[Query Normalization]
         CleanQ --> Dense[Dense Cosine Similarity Search]
         CleanQ --> Sparse[BM25 Sparse Search]
